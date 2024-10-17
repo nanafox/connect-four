@@ -2,6 +2,8 @@
 
 require_relative "../lib/board"
 
+# rubocop:disable Metrics/BlockLength
+
 RSpec.describe Board do
   subject(:board) { described_class.new }
   let(:player_one) { double("player", symbol: "X") }
@@ -53,7 +55,7 @@ RSpec.describe Board do
       end
 
       it "does not update the board" do
-        expect(board.updatable?(move - 1)).to be(false)
+        expect(board.update(move, "O")).to be(false)
       end
     end
   end
@@ -151,6 +153,17 @@ RSpec.describe Board do
         expect(board.win?).to be true
       end
     end
+
+    context "when there is no win" do
+      it "returns false" do
+        board.update(4, player_one.symbol)
+        board.update(3, player_two.symbol)
+        board.update(3, player_one.symbol)
+        board.update(2, player_two.symbol)
+
+        expect(board.win?).to be(false)
+      end
+    end
   end
 
   describe "#display" do
@@ -211,3 +224,5 @@ RSpec.describe Board do
     end
   end
 end
+
+# rubocop:enable Metrics/BlockLength
