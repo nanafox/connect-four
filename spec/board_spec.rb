@@ -58,6 +58,13 @@ RSpec.describe Board do
         expect(board.update(move, "O")).to be(false)
       end
     end
+
+    context "when the column given is out of range" do
+      it "does not update the board" do
+        out_of_range_column = board.length + 1
+        expect(board.update(out_of_range_column, "X")).to be(false)
+      end
+    end
   end
 
   describe "#updatable?" do
