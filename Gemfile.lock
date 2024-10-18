@@ -4,6 +4,7 @@ GEM
     colorize (1.1.0)
     diff-lcs (1.5.1)
     docile (1.4.1)
+    rake (13.2.1)
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -30,6 +31,7 @@ PLATFORMS
 
 DEPENDENCIES
   colorize (~> 1.1)
+  rake (~> 13.2)
   rspec (~> 3.13)
   simplecov
 
