@@ -71,7 +71,12 @@ class Board
   def to_s
     space = 3
     separator = "#{'+---' * COLUMNS}+\n"
-    board_str = separator.dup
+    column_numbers = (1..COLUMNS).map do |num|
+      num.to_s.center(space)
+    end.join(" ").rstrip
+
+    # Start with column numbers at the top
+    board_str = " #{column_numbers}\n" + separator.dup
 
     # Print from the bottom row to the top row
     (@grid.length - 1).downto(0) do |i|
