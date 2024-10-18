@@ -16,4 +16,12 @@ RSpec.describe Player do
       expect(player.symbol).to eql("X")
     end
   end
+
+  describe "player creation" do
+    it "creates a new player" do
+      player = Player.new(name: "Sally", symbol: "X")
+
+      expect(player).to be_a(Player)
+    end
+  end
 end
