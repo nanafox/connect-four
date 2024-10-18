@@ -3,6 +3,6 @@
 require "rake"
 
 desc "Run the game"
-task :run_game do
+task :play do
   ruby "main.rb"
 end
