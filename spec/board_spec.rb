@@ -177,6 +177,7 @@ RSpec.describe Board do
     context "when the board is empty" do
       let(:expected_output) do
         <<~BOARD
+            1   2   3   4   5   6   7
           +---+---+---+---+---+---+---+
           |   |   |   |   |   |   |   |
           +---+---+---+---+---+---+---+
@@ -209,6 +210,7 @@ RSpec.describe Board do
 
       let(:expected_output) do
         <<~BOARD
+            1   2   3   4   5   6   7
           +---+---+---+---+---+---+---+
           |   |   |   |   |   |   |   |
           +---+---+---+---+---+---+---+
