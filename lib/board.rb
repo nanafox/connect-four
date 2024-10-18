@@ -21,7 +21,7 @@ class Board
   # @param symbol [Object] The symbol representing the player making the move.
   # @return [Boolean] `true` on successful updates, `false` otherwise
   def update(column, symbol)
-    return false if symbol.nil?
+    return false if symbol.nil? || column > COLUMNS
 
     array_column = column - 1
     return false unless updatable?(array_column)
@@ -80,6 +80,11 @@ class Board
     end
 
     board_str
+  end
+
+  # Returns the length of the column in the board
+  def length
+    @grid[0].length
   end
 
   private
